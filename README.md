@@ -9,5 +9,5 @@ a personal operating system i made with CosmosOS. still very experimental.
 
 - Kernel: C#
 - Architecture: x86-64
-- Bootloader: Custom / Cosmos-based (update as appropriate)
+- Bootloader: CosmosOS
 - Build system: .NET
