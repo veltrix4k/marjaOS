@@ -1,0 +1,4 @@
+bin/
+obj/
+output-x64/
+.vscode/
