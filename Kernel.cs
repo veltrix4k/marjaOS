@@ -1,6 +1,9 @@
 using System;
 using Sys = Cosmos.Kernel.System;
 
+using marjaOS;
+
+
 namespace marjaOS;
 
 public class Kernel : Sys.Kernel
@@ -53,6 +56,9 @@ public class Kernel : Sys.Kernel
         Console.Write("PROMPT> ");
         var thing = Console.ReadLine();
 
-        Console.WriteLine(thing);
+        if (string.IsNullOrWhiteSpace(thing))
+            return;
+
+        Handler.Handle(thing);
     }
 }
