@@ -1,0 +1,17 @@
+{
+  "qemu": {
+    "memory": "512M",
+    "machineType": "q35",
+    "cpuModel": "max",
+    "serialMode": "stdio",
+    "networkCard": "none",
+    "portForwards": [],
+    "keyboard": "ps2",
+    "mouse": "ps2",
+    "audio": "ich9-intel-hda",
+    "enableNetwork": false,
+    "networkPorts": "5555",
+    "extraArgs": "",
+    "disks": []
+  }
+}

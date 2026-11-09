@@ -1,16 +1,11 @@
-using System.Collections.Generic;
+using System.IO;
 
 namespace marjaOS;
 
 public static class Programs
 {
-    private static Dictionary<string, string[]> list = new()
-    {
-        { "helloworld", new string[] { "PRINT hello world" } }
-    };
-
     public static string[] Get(string name)
     {
-        return list[name];
+        return File.ReadAllLines("/cdrom/programs/" + name + ".mjrs");
     }
 }

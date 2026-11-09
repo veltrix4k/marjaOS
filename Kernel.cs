@@ -1,8 +1,9 @@
-using System;
 using Sys = Cosmos.Kernel.System;
 
-using marjaOS;
-
+using Cosmos.Kernel.System.Storage;
+using Cosmos.Kernel.HAL.Devices.Storage;
+using Cosmos.Kernel.System.FileSystem;
+using Cosmos.Kernel.System.FileSystem.Iso9660;
 
 namespace marjaOS;
 
@@ -49,6 +50,19 @@ public class Kernel : Sys.Kernel
             }
         }
 
+        IBlockDevice cdrom = StorageManager.Devices[0];
+
+        VfsManager.RegisterFileSystem("iso", new Iso9660FileSystemType(cdrom));
+
+        if (VfsManager.TryMount("iso", "", MountFlags.None, "/cdrom", out _))
+        {
+            Console.WriteLine(File.ReadAllText("/cdrom/test.txt"));
+        }
+        else
+        {
+            Console.WriteLine("Failed to mount ISO");
+
+}
     }
 
     protected override void Run()

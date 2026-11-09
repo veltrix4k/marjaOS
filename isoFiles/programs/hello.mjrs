@@ -1,0 +1,3 @@
+SET planet Mars
+PRINT hello world from $planet
+PRINT planet
